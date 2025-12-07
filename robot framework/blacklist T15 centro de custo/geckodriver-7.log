@@ -1,0 +1,38 @@
+1765114087050	geckodriver	INFO	Listening on 127.0.0.1:63753
+1765114090107	mozrunner::runner	INFO	Running command: "C:\\Users\\renat\\AppData\\Local\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "6 ... 4" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\renat\\AppData\\Local\\Temp\\rust_mozprofileoSmCZV"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1765114090461	Marionette	INFO	Marionette enabled
+1765114090597	Marionette	INFO	Listening on port 63762
+WebDriver BiDi listening on ws://127.0.0.1:63754
+Read port: 63762
+1765114090744	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: services.settings: 
+  main/fingerprinting-protection-overrides Signature failed  InvalidSignatureError: Invalid content signature (main/fingerprinting-protection-overrides) using 'remote-settings.content-signature.mozilla.org-2026-01-07-09-15-50.chain'
+console.error: services.settings: 
+  main/query-stripping Signature failed  InvalidSignatureError: Invalid content signature (main/query-stripping) using 'remote-settings.content-signature.mozilla.org-2026-01-07-09-15-50.chain'
+console.error: services.settings: 
+  main/fingerprinting-protection-overrides local data was corrupted
+console.warn: services.settings: main/fingerprinting-protection-overrides Signature verified failed. Retry from scratch
+console.error: services.settings: 
+  main/query-stripping local data was corrupted
+console.warn: services.settings: main/query-stripping Signature verified failed. Retry from scratch
+console.error: services.settings: 
+  main/fingerprinting-protection-overrides Signature failed again InvalidSignatureError: Invalid content signature (main/fingerprinting-protection-overrides) using 'remote-settings.content-signature.mozilla.org-2026-01-07-09-15-50.chain'
+console.error: services.settings: 
+  main/query-stripping Signature failed again InvalidSignatureError: Invalid content signature (main/query-stripping) using 'remote-settings.content-signature.mozilla.org-2026-01-07-09-15-50.chain'
+console.error: (new InvalidSignatureError("Invalid content signature (main/fingerprinting-protection-overrides) using 'remote-settings.content-signature.mozilla.org-2026-01-07-09-15-50.chain'", "resource://services-settings/RemoteSettingsClient.sys.mjs", 165))
+console.error: (new InvalidSignatureError("Invalid content signature (main/query-stripping) using 'remote-settings.content-signature.mozilla.org-2026-01-07-09-15-50.chain'", "resource://services-settings/RemoteSettingsClient.sys.mjs", 165))
+console.error: services.settings: 
+  main/partitioning-exempt-urls Signature failed  InvalidSignatureError: Invalid content signature (main/partitioning-exempt-urls) using 'remote-settings.content-signature.mozilla.org-2026-01-07-09-15-50.chain'
+console.error: services.settings: 
+  main/partitioning-exempt-urls local data was corrupted
+console.warn: services.settings: main/partitioning-exempt-urls Signature verified failed. Retry from scratch
+console.error: services.settings: 
+  main/partitioning-exempt-urls Signature failed again InvalidSignatureError: Invalid content signature (main/partitioning-exempt-urls) using 'remote-settings.content-signature.mozilla.org-2026-01-07-09-15-50.chain'
+console.error: (new InvalidSignatureError("Invalid content signature (main/partitioning-exempt-urls) using 'remote-settings.content-signature.mozilla.org-2026-01-07-09-15-50.chain'", "resource://services-settings/RemoteSettingsClient.sys.mjs", 165))
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://blacklist.qacoders.dev.br."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://blacklist.qacoders.dev.br."
+1765114110083	Marionette	INFO	Stopped listening on port 63762
+Dynamically enable window occlusion 1

@@ -1,0 +1,341 @@
+{
+	"info": {
+		"_postman_id": "38b716a3-ac03-41f1-8082-4a0796a0435b",
+		"name": "Cópia Blacklist T15 - Relatório",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48407990",
+		"_collection_link": "https://renatobezerrarj-6984956.postman.co/workspace/Curso-QA-Blacklist---T15~fc8552e7-9831-48ab-af72-77fda4b2b292/collection/48407990-38b716a3-ac03-41f1-8082-4a0796a0435b?action=share&source=collection_link&creator=48407990"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "user_login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.globals.set(\"tokenAdmin\", pm.response.json().token)\r",
+									"\r",
+									"pm.test(\"Status code is 200\", () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"verify token is valid\", function(){\r",
+									"    pm.expect(pm.response.json().token).to.exist;\r",
+									"});\r",
+									"\r",
+									"// pm.test(\"Welcome message\", () => {\r",
+									"//     pm.environment.set(\"msgAdmin\", pm.response.json().msg);\r",
+									"// })\r",
+									"\r",
+									"// pm.test(\"Verify ID Admin\", () => {\r",
+									"//     pm.environment.set(\"IDAdmin\", pm.response.json().user._id);\r",
+									"// });"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mail\": \"{{mailAdmin}}\",\r\n    \"password\": \"{{passAdmin}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}login",
+							"host": [
+								"{{url}}login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "validate_user_token",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}validateToken",
+							"host": [
+								"{{url}}validateToken"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "create_user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", () => {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Verify the message of register\", () => {\r",
+									"    pm.globals.set(\"Message\", 'Olá ${pm.globals.get (\"FulName)}, cadastro realizado com sucesso.')\r",
+									"})\r",
+									"\r",
+									"pm.test(\"User ID\", () => {\r",
+									"    pm.expect(pm.globals.set(\"IDUser\", \r",
+									"        pm.response.json().user._id))\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"function firstname() {\r",
+									"    const names = ['Alice', 'Miguel', 'Sophia', 'Arthur', 'Helena', 'Bernardo', 'Valentina', 'Heitor', 'Laura', 'Davi', 'Isabela', 'Lorenzo', 'Manuela', 'Theo', 'Luiza', 'Pedro', 'Giovanna', 'Gabriel', 'Julia']; \r",
+									"    const randomName = names[Math.floor(Math.random() * names.length)]   \r",
+									"\r",
+									"    return randomName\r",
+									"}\r",
+									"pm.globals.set(\"FirstName\", firstname())\r",
+									"\r",
+									"function lastname() {\r",
+									"    const lastnames = ['Silva', 'Santos', 'Oliveira', 'Souza', 'Rodrigues', 'Almeida', 'Lima', 'Ferreira', 'Pereira', 'Carvalho', 'Goncalves', 'Ribeiro', 'Costa', 'Araujo', 'Martins', 'Fernandes'];\r",
+									"\r",
+									"    const randomLastName = lastnames[Math.floor(Math.random() * lastnames.length)]\r",
+									"    return randomLastName\r",
+									"}\r",
+									"pm.globals.set(\"LastName\", lastname())\r",
+									"\r",
+									"pm.globals.set(\"FullName\", \r",
+									"    pm.globals.get(\"FirstName\") + \" \" + pm.globals.get(\"LastName\"))\r",
+									"\r",
+									"pm.globals.set(\"Mail\", pm.globals.get(\"FullName\").toLowerCase().replace(/\\s/g, \"\").normalize(\"NFD\").replace(/[\\u0300-\\u836f]/g, \"\") + '@qacoders.com.br')\r",
+									"\r",
+									"function generatePassword() {\r",
+									"    const upperCase = \"ABCDEFGHIJKLMNOPQRSTUVWXZ\";\r",
+									"    const lowerCase = \"abcdefghijklmnopqrstuvwxz\";\r",
+									"    const numbers = \"0123456789\";\r",
+									"    const specials = \"@#$%\";     \r",
+									"    const allChars = upperCase + lowerCase + numbers + specials;\r",
+									"\r",
+									"    const minLen = 8;\r",
+									"    const maxLen = 12;\r",
+									"    const passwordLength = Math.floor(Math.random() * (maxLen - minLen + 1)) + minLen;\r",
+									"\r",
+									"    let senhaArray = [];\r",
+									"\r",
+									"senhaArray.push(upperCase[Math.floor(Math.random() * upperCase.length)]);\r",
+									"senhaArray.push(lowerCase[Math.floor(Math.random() * lowerCase.length)]);\r",
+									"senhaArray.push(numbers[Math.floor(Math.random() * numbers.length)]);     \r",
+									"senhaArray.push(specials[Math.floor(Math.random() * specials.length)]);\r",
+									"\r",
+									"    for (let i = senhaArray.length; i < passwordLength; i++) {\r",
+									"        senhaArray.push(allChars[Math.floor(Math.random() * allChars.length)]);\r",
+									"    }\r",
+									"    return shuffleString(senhaArray.join(\"\"));\r",
+									"}\r",
+									"\r",
+									"function shuffleString(string) {\r",
+									"  return string.split(\"\").sort(() => Math.random() - 0.5).join(\"\");\r",
+									"}\r",
+									"\r",
+									"pm.globals.set(\"passUser\", generatePassword());\r",
+									"\r",
+									"\r",
+									"function randomCpf() {\r",
+									"    let randomCpf = '';\r",
+									"\r",
+									"    for (let i = 0; i < 11; i++) {\r",
+									"        randomCpf += Math.floor(Math.random() *10).toString();\r",
+									"    }\r",
+									"    return randomCpf;\r",
+									"}\r",
+									"\r",
+									"pm.globals.set(\"CPF\", randomCpf());"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"{{FullName}}\",\r\n    \"mail\": \"{{Mail}}\",\r\n    \"accessProfile\": \"ADMIN\",\r\n    \"cpf\": \"{{CPF}}\",\r\n    \"password\": \"{{passUser}}\",\r\n    \"confirmPassword\": \"{{passUser}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}user",
+							"host": [
+								"{{url}}user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"let statusCode = pm.response.code;\r",
+									"\r",
+									"if (statusCode === 200) {\r",
+									"    pm.test(\"Status code is 200\", function () {\r",
+									"        pm.response.to.have.status(200);\r",
+									"    });\r",
+									"\r",
+									"    pm.test(\"Mensagem: Usuário deletado com sucesso.\", function () {\r",
+									"        pm.expect(jsonData.msg).to.eql(\"Usuário deletado com sucesso.\");\r",
+									"    });\r",
+									"}\r",
+									"\r",
+									"else if (statusCode === 400 && jsonData.alert && jsonData.alert.includes(\"Esse usuário não existe em nossa base de dados.\")) {\r",
+									"    pm.test(\"Status 400 - Usuário não existe\", function () {\r",
+									"        pm.response.to.have.status(400);\r",
+									"        pm.expect(jsonData.alert).to.include(\"Esse usuário não existe em nossa base de dados.\");\r",
+									"    });\r",
+									"}\r",
+									"\r",
+									"else if (statusCode === 400 && jsonData.errors && jsonData.errors[0] === \"No token provided.\") {\r",
+									"    pm.test(\"Status 400 - Token ausente\", function () {\r",
+									"        pm.response.to.have.status(400);\r",
+									"        pm.expect(jsonData.errors[0]).to.eql(\"No token provided.\");\r",
+									"    });\r",
+									"}\r",
+									"\r",
+									"else {\r",
+									"    pm.test(\"Resposta inesperada\", function () {\r",
+									"        console.warn(\"Código de status ou mensagem não esperada:\", statusCode, jsonData.message);\r",
+									"        pm.expect.fail(\"Resposta não tratada nos testes\");\r",
+									"    });\r",
+									"}\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}user/{{IDUser}}",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"{{IDUser}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "{{tokenAdmin}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "Authorization",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,189 @@
+{
+	"id": "1c25cb56-1316-4bad-8ed5-8662dee0ba8d",
+	"values": [
+		{
+			"key": "tokenAdmin",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OGRiZTc4MzRiY2JhODcyNzkxZGQyYjkiLCJ1c2VySWQiOiI2OGRiZTc4MzRiY2JhODcyNzkxZGQyYjkiLCJuYW1lIjoiUWEtQ29kZXJzLVNZU0FETUlOIiwibWFpbCI6InN5c2FkbWluQHFhY29kZXJzLmNvbSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImlhdCI6MTc2MTI0NTMzOCwiZXhwIjoxNzYxMzMxNzM4fQ.67bScgFioq8eoshgj76MNol5bd3k-5_WBcuPJ2jPAMY",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "url",
+			"value": "https://api-blacklist.qacoders.dev.br/api/",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "mailAdmin",
+			"value": "sysadmin@qacoders.com",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "passAdmin",
+			"value": "1234@Test",
+			"type": "secret",
+			"enabled": true
+		},
+		{
+			"key": "msgAdmin",
+			"value": "Olá Renato Bezerra, autenticação autorizada com sucesso!",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "IDAdmin",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "FirstName",
+			"value": "Pedro",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "LastName",
+			"value": "Lima",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "FullName",
+			"value": "Pedro Lima",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "passUser",
+			"value": "1FrgfRZRVEr@",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "CPF",
+			"value": "62590348094",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "Mail",
+			"value": "pedrolima@qacoders.com.br",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "Message",
+			"value": "Olá ${pm.globals.get (\"FulName)}, cadastro realizado com sucesso.",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "companyID",
+			"value": "68e74eea487bb1fc155db968",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "IDUser",
+			"value": "68fa789beb1149d308d6f1e2",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "corporateName",
+			"value": "Teste do Teste",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "registerCompany",
+			"value": "12126456000155",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "mail",
+			"value": "test@test.com",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "matriz",
+			"value": "Teste",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "responsibleContact",
+			"value": "Marcio Araujo",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "telephone",
+			"value": "99999999999999",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "serviceDescription",
+			"value": "Testes",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "zipCode",
+			"value": "04777001",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "country",
+			"value": "Brasil",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "complement",
+			"value": "de 4503 ao fim - lado ímpar",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "number",
+			"value": "30",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "city",
+			"value": "São Paulo",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "state",
+			"value": "SP",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "district",
+			"value": "Rua das Flores",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "street",
+			"value": "Avenida Interlagos",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"name": "Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2025-10-23T18:58:16.513Z",
+	"_postman_exported_using": "Postman/11.68.0"
+}

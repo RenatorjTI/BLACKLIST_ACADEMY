@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.14.0 on win32)" generated="2025-12-07T12:13:33.415833" rpa="false" schemaversion="5">
+<suite id="s1" name="Centrodecusto" source="C:\Users\renat\OneDrive\Área de Trabalho\academy\Blacklist_academy\robot framework\blacklist T15 criar centro de custo\Tests\centrodecusto.robot">
+<kw name="Abrir Navegador" owner="common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-12-07T12:13:35.666899" level="INFO">Opening browser 'Firefox' to base url 'https://blacklist.qacoders.dev.br'.</msg>
+<arg>${BASE_URL_UI}</arg>
+<arg>Firefox</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-12-07T12:13:35.666671" elapsed="21.939888"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-12-07T12:13:57.607090" elapsed="0.004745"/>
+</kw>
+<status status="PASS" start="2025-12-07T12:13:35.665455" elapsed="21.946522"/>
+</kw>
+<test id="s1-t1" name="Cenario 01: Cadastrar e Editar Centro de Custo" line="11">
+<kw name="Realizar login" owner="login">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-12-07T12:14:07.758668" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-12-07T12:14:07.759127" level="FAIL">Element 'id:email' not visible after 10 seconds.</msg>
+<arg>id:email</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-12-07T12:13:57.613221" elapsed="10.168515">Element 'id:email' not visible after 10 seconds.</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id:email</arg>
+<arg>${FRONTEND_EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-12-07T12:14:07.782105" elapsed="0.000137"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-12-07T12:14:07.782440" elapsed="0.000045"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${FRONTEND_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-12-07T12:14:07.782587" elapsed="0.000024"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:login</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-12-07T12:14:07.782695" elapsed="0.000020"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id:login</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-12-07T12:14:07.782828" elapsed="0.000024"/>
+</kw>
+<status status="FAIL" start="2025-12-07T12:13:57.612904" elapsed="10.170148">Element 'id:email' not visible after 10 seconds.</status>
+</kw>
+<kw name="Verificar Redirecionamento Para Home" owner="login">
+<status status="NOT RUN" start="2025-12-07T12:14:07.783498" elapsed="0.000046"/>
+</kw>
+<kw name="Verificar Elemento Cadastros Visivel" owner="login">
+<status status="NOT RUN" start="2025-12-07T12:14:07.783841" elapsed="0.000053"/>
+</kw>
+<kw name="Acessar Pagina Centro de Custo" owner="centrodecusto">
+<status status="NOT RUN" start="2025-12-07T12:14:07.784234" elapsed="0.000054"/>
+</kw>
+<kw name="Cadastrar Novo Centro de Custo" owner="centrodecusto">
+<status status="NOT RUN" start="2025-12-07T12:14:07.784665" elapsed="0.000043"/>
+</kw>
+<kw name="Editar Primeiro Centro de Custo" owner="centrodecusto">
+<status status="NOT RUN" start="2025-12-07T12:14:07.785209" elapsed="0.000053"/>
+</kw>
+<status status="FAIL" start="2025-12-07T12:13:57.612089" elapsed="10.173674">Element 'id:email' not visible after 10 seconds.</status>
+</test>
+<kw name="Fechar Navegador" owner="common" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-12-07T12:14:07.791535" elapsed="3.374584"/>
+</kw>
+<status status="PASS" start="2025-12-07T12:14:07.790277" elapsed="3.376030"/>
+</kw>
+<status status="FAIL" start="2025-12-07T12:13:33.417706" elapsed="37.748646"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Centrodecusto" id="s1" pass="0" fail="1" skip="0">Centrodecusto</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
