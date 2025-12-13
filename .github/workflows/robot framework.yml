@@ -41,7 +41,7 @@ jobs:
         env:
           CI: true
         run: |
-          robot --outputdir results --test "Cenario 00: Login com sucesso" robot-framework-frontend/tests/cliente/departamento.robot
+          robot --outputdir results --test "Cenario 00: Login com sucesso" robot-framework-frontend/blacklist_T15_editar_departamento/tests/cliente/departamento.robot
         continue-on-error: false
 
       - name: Check Test Results
